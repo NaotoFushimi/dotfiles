@@ -1,6 +1,7 @@
-
+`git pull origin master`;
 `cp vimrc ~/.vimrc`;
 `cp zshrc ~/.zshrc`;
+`cp -r sheet ~/.sheet`;
 `source ~/.zshrc`;
 `mkdir -p ~/.vim/colors`;
 `mkdir -p ~/.vim/bundle`;
