@@ -7,5 +7,5 @@ use warnings;
 `cp ~/.vimrc > vimrc`;
 `cp -r ~/.sheet > sheet`;
 `git add .`;
-`git add commit -m "upload"`;
+`git add commit -m upload`;
 `git push origin master`;
