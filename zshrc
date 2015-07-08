@@ -105,12 +105,10 @@ export LC_CTYPE=ja_JP.UTF-8
 export LC_TIME=ja_JP.UTF-8
 export LC_NAME=ja_JP.UTF-8
 
+alias zs="source ~/.zshrc";
 
-#独自あんちょこ
-alias sni="ls $HOME/.sheets";
-alias sni.git="cat $HOME/.sheets/git"
-alias sni.find="cat $HOME/.sheets/find"
-alias sni.perl="cat $HOME/.sheets/perl"
-
+#自作 seeコマンド　引数のファイルを見る
+sni() { cat $HOME/.sheets/$1; }
+alias sniall="ls $HOME/.sheets";
 
 
