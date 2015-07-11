@@ -221,3 +221,45 @@ nmap <C-f> :TagbarToggle<CR>
 
 
 syntax on
+
+"Cコマンドでgit commit -m
+command! -nargs=? C call GitCommit(<f-args>)
+function! GitCommit(...)
+ if a:0 >= 1
+    let commitmsg = "\"" . a:1 ."\""
+    let currentDir = "\"". expand("%:h")."\""
+    let currentAbsDir= system("pwd")
+    let syscom = "git add \-A " .currentDir. " \| git commit \-m ".commitmsg
+    call system(syscom)
+ else
+   echo "Commit message should be specified!"
+ end
+endfunction
+
+
+
+command! -nargs=? Vimdoc call SnipLink(<f-args>)
+function! SnipLink(...)
+ if a:0 >= 1
+    let file=expand("$HOME")."/.vimdoc/".a:1
+    execute ":tabnew "
+    execute ":e ".file
+ else
+   let file=expand("$HOME")."/.vimdoc"
+   let list= system("ls ".file )
+   echo list 
+ end
+endfunction
+
+
+"command! -nargs=? Vimdoc call SnipList(<f-args>)
+"function! SnipList(...)
+"   let file=expand("$HOME")."/.vimdoc"
+"   let list= system("ls ".file )
+"   echo list 
+"endfunction
+
+command! -nargs=? Ls call LsMe(<f-args>)
+function! LsMe(...)
+    echo globpath('.', '*')
+endfunction
