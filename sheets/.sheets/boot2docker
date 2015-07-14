@@ -1,0 +1,10 @@
+
+#共有用とレジストリ
+VBoxManage sharedfolder add "boot2docker-vm" -name "docker_shared" -hostpath "/Users/fushiminaoto/.docker_shared"
+VBoxManage sharedfolder add "boot2docker-vm" -name "docker_registry" -hostpath "/Users/fushiminaoto/docker_registry"
+
+
+boot2docker ssh "sudo mkdir docker_shared"
+boot2docker ssh "sudo mount -t vboxsf -o uid=1000,gid=50 docker_shared docker_shared"
+boot2docker ssh "sudo mkdir docker_registry"
+boot2docker ssh "sudo mount -t vboxsf -o uid=1001,gid=51 docker_registry docker_registry"

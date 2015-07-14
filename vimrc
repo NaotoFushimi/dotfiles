@@ -5,7 +5,7 @@ if has('vim_starting')
   
     NeoBundle "Shougo/neosnippet"
     NeoBundle "git@github.com:NaotoFushimi/neosnippet-snippets.git"
-    NeoBundle "honza/vim-snippets"
+    "NeoBundle "honza/vim-snippets" #イラネ
     
     NeoBundle 'thinca/vim-quickrun'
     NeoBundle 'scrooloose/nerdtree'
@@ -16,7 +16,7 @@ if has('vim_starting')
 
     NeoBundle 'https://github.com/motemen/git-vim'
     
-    NeoBundle 'https://github.com/leafgarland/typescript-vim.git'
+    "NeoBundle 'https://github.com/leafgarland/typescript-vim.git'
     NeoBundle 'Shougo/neocomplcache'
     NeoBundle 'https://github.com/jason0x43/vim-js-indent.git'
     NeoBundle 'https://github.com/kien/rainbow_parentheses.vim.git'
@@ -97,7 +97,6 @@ autocmd FileType pl,perl,cgi,pm,psgi,t :compiler perl
 autocmd FileType html,htm set ts=4 sw=4
 autocmd FileType rb  :compiler ruby
 autocmd Bufenter *.js,*.tt set ts=4 sw=4
-au BufRead,BufNewFile *.ts setfiletype typescript
 
 let g:Powerline_symbols = 'fancy'
 set guifont='SourceCodePro-Regular-Powerline'
@@ -114,7 +113,7 @@ smap <C-a> <Plug>(neosnippet_expand_or_jump)
 imap <expr><TAB> neosnippet#jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 smap <expr><TAB> neosnippet#jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 set clipboard+=unnamed,autoselect
-au BufRead,BufNewFile *.ts setfiletype javascript
+au BufRead,BufNewFile *.ts setfiletype javascript.html.typescript
 
 "-------------------------------------------------------------------------
 "前に開いたときのカーソル位置
@@ -237,7 +236,7 @@ function! GitCommit(...)
 endfunction
 
 
-
+"自作Vimdocコマンド
 command! -nargs=? Vimdoc call SnipLink(<f-args>)
 function! SnipLink(...)
  if a:0 >= 1
@@ -251,15 +250,8 @@ function! SnipLink(...)
  end
 endfunction
 
-
-"command! -nargs=? Vimdoc call SnipList(<f-args>)
-"function! SnipList(...)
-"   let file=expand("$HOME")."/.vimdoc"
-"   let list= system("ls ".file )
-"   echo list 
-"endfunction
-
 command! -nargs=? Ls call LsMe(<f-args>)
 function! LsMe(...)
     echo globpath('.', '*')
 endfunction
+
