@@ -11,7 +11,7 @@ use warnings;
 `source ~/.zshrc`;
 `mkdir -p ~/.vim/colors`;
 `mkdir -p ~/.vim/bundle`;
-command('git clone git@github.com:NaotoFushimi/molokai.git');
+`git clone https://github.com/NaotoFushimi/molokai.git`;
 `mv molokai/colors/molokai.vim ~/.vim/colors/`;
 `rm -rf molokai`;
 `cd ~/`;
