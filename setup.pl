@@ -1,11 +1,17 @@
+use 5.20.2;
+use strict;
+use warnings;
+
+
 `git pull origin master`;
 `cp vimrc ~/.vimrc`;
 `cp zshrc ~/.zshrc`;
 `cp -r sheet ~/.sheet`;
+`cp -r vimdoc ~/.vimdoc`;
 `source ~/.zshrc`;
 `mkdir -p ~/.vim/colors`;
 `mkdir -p ~/.vim/bundle`;
-`git clone https://github.com/tomasr/molokai`;
+command('git clone git@github.com:NaotoFushimi/molokai.git');
 `mv molokai/colors/molokai.vim ~/.vim/colors/`;
 `rm -rf molokai`;
 `cd ~/`;
