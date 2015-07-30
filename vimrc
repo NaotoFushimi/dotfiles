@@ -4,7 +4,7 @@ if has('vim_starting')
     NeoBundleFetch 'Shougo/neobundle.vim'
   
     NeoBundle "Shougo/neosnippet"
-    NeoBundle "git@github.com:NaotoFushimi/neosnippet-snippets.git"
+    NeoBundle "https://github.com/NaotoFushimi/neosnippet-snippets.git"
     "NeoBundle "honza/vim-snippets" #イラネ
     
     NeoBundle 'thinca/vim-quickrun'
