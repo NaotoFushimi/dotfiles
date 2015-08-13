@@ -6,7 +6,7 @@ use warnings;
 `git pull origin master`;
 `cp vimrc ~/.vimrc`;
 `cp zshrc ~/.zshrc`;
-`cp -r sheet ~/.sheet`;
+`cp -r sheets ~/.sheets`;
 `cp -r vimdoc ~/.vimdoc`;
 `source ~/.zshrc`;
 `mkdir -p ~/.vim/colors`;

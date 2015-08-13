@@ -3,7 +3,7 @@
 git pull origin master;
 cp vimrc $HOME/.vimrc;
 cp zshrc $HOME/.zshrc;
-cp -r sheet $HOME/.sheet;
+cp -r sheets $HOME/.sheets;
 cp -r vimdoc $HOME/.vimdoc;
 source $HOME/.zshrc;
 mkdir -p $HOME/.vim/colors;
