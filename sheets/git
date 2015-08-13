@@ -1,9 +1,4 @@
-git checkout
+#いらなくなったブランチの削除
 
-git add 
-
-git commit
-
-git pull origin
-
-git push origin
+git branch -d (ブランチ)
+git push origin :(ブランチ)
