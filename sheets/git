@@ -2,3 +2,21 @@
 
 git branch -d (ブランチ)
 git push origin :(ブランチ)
+
+
+#Commiterのログ変更
+	git filter-branch --commit-filter '
+	if [ "$GIT_COMMITTER_NAME" = "docker_test" ]; then
+	GIT_COMMITTER_NAME="fushiminaoto_docker"
+	fi
+	git commit-tree "$@"
+	' HEAD
+
+#特定のコミッターのログ
+git log --committer=docker_test
+
+#今の子満ったー
+git config --global --list
+
+#コミッター名変えます
+git config --global user.name fushiminaoto
