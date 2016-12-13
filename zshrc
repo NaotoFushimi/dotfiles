@@ -5,6 +5,7 @@ eval "$(rbenv init -)"
 
 export PATH=/usr/local/bin/redis-cli:$PATH
 export PATH=/usr/local/bin/redis-server:$PATH
+export PATH=/usr/local/bin/bash:$PATH
 
 HISTFILE=~/.zsh_history      # ヒストリファイルを指定
 HISTSIZE=100000
@@ -112,3 +113,20 @@ sni() { cat $HOME/.sheets/$1; }
 alias sniall="ls $HOME/.sheets";
 
 
+
+export ANDROID_HOME=/Users/fushiminaoto/android-sdk/eclipse/sdk
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+
+# The next line updates PATH for the Google Cloud SDK.
+#source '/Users/fushiminaoto/00/instant/bq/google-cloud-sdk/path.zsh.inc'
+
+# The next line enables shell command completion for gcloud.
+#source '/Users/fushiminaoto/00/instant/bq/google-cloud-sdk/completion.zsh.inc'
+
+
+
+export NODE_PATH=/Users/fushiminaoto/.nodebrew/node/v7.0.0/lib/node_modules
+export PATH=$PATH:/Users/fushiminaoto/.nodebrew/current/bin
+
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin

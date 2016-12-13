@@ -10,3 +10,7 @@ $ find ./ -name "*.v" -ls
 
 #カレント以下スワップ削除
 find ./ -name "*.swp" -exec rm -rf {} \;
+
+
+#特定文字列を含まないファイル名を検索
+ggrep -r -L "const " htdocs_hotchkiss/js/

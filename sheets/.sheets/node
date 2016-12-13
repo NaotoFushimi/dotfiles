@@ -1,0 +1,5 @@
+
+#テスト用プリセット
+npm install --save babel-preset-es2015 espower-typescript-babel mocha power-assert rewire
+
+./node_modules/.bin/mocha --compilers ts:espower-typescript-babel/guess test/*

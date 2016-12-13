@@ -1,10 +1,12 @@
+
 if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim
-  call neobundle#begin(expand('~/.vim/bundle/'))
+set rtp+=~/.vim/bundle/neobundle.vim
+    endif
+call neobundle#begin()
     NeoBundleFetch 'Shougo/neobundle.vim'
-  
+
     NeoBundle "Shougo/neosnippet"
-    NeoBundle "https://github.com/NaotoFushimi/neosnippet-snippets.git"
+    NeoBundle "git@github.com:NaotoFushimi/neosnippet-snippets.git"
     "NeoBundle "honza/vim-snippets" #イラネ
     
     NeoBundle 'thinca/vim-quickrun'
@@ -18,7 +20,7 @@ if has('vim_starting')
     
     "NeoBundle 'https://github.com/leafgarland/typescript-vim.git'
     NeoBundle 'Shougo/neocomplcache'
-    NeoBundle 'https://github.com/jason0x43/vim-js-indent.git'
+    "NeoBundle 'https://github.com/jason0x43/vim-js-indent.git'
     NeoBundle 'https://github.com/kien/rainbow_parentheses.vim.git'
     NeoBundle 'https://github.com/tpope/vim-fugitive.git'
 
@@ -31,17 +33,30 @@ if has('vim_starting')
     NeoBundle 'soramugi/auto-ctags.vim'
     NeoBundle "https://github.com/majutsushi/tagbar.git"
 
-  call neobundle#end()
+    NeoBundle 'Shougo/vimproc'
+    "NeoBundle 'Quramy/tsuquyomi'
+    NeoBundle 'leafgarland/typescript-vim'
+    NeoBundle 'moll/vim-node'
+
+
+call neobundle#end()
+
+filetype plugin indent on
+
+if !has('vim_starting')
+    call neobundle#call_hook('on_source')
 endif
 
+autocmd BufNewFile,BufRead *.ts     set filetype=typescript
+autocmd BufNewFile,BufRead *.tsx    set filetype=typescript
+ 
 syntax on
 set nocp
 set number
 set nowrap
 set backspace=2
-set shiftwidth=4
 set ts=4
-set expandtab
+"set expandtab
 set nolist
 set smartindent 
 " 横線の表示
@@ -54,13 +69,20 @@ set laststatus=2
 set hlsearch
 "" 括弧入力時の対応する括弧を表示
 set showmatch
+
+"" Filename-completion
+"set autochdir
+
+set tabstop=4
+set autoindent
+set expandtab
+set shiftwidth=4
 "--------------------------------------------------------------------------------
 " Use case insensitive search, except when using capital letters
 " 検索時に大文字・小文字を区別しない。ただし、検索後に大文字小文字が
 " 混在しているときは区別する
 set ignorecase
 set smartcase
-
 " " コマンドライン補完を便利に
 set wildmenu
 " " タイプ途中のコマンドを画面最下行に表示
@@ -94,9 +116,10 @@ au BufRead,BufNewFile *.js setfiletype javascript
 au BufRead,BufNewFile *.tt,*.tt2 setfiletype html
 
 autocmd FileType pl,perl,cgi,pm,psgi,t :compiler perl
-autocmd FileType html,htm set ts=4 sw=4
+autocmd FileType pl,perl,cgi,pm,psgi,t :set ts=4 sw=4
+autocmd FileType html,htm set ts=2 sw=2
 autocmd FileType rb  :compiler ruby
-autocmd Bufenter *.js,*.tt set ts=4 sw=4
+autocmd Bufenter *.js,*.tt set ts=2 sw=2
 
 let g:Powerline_symbols = 'fancy'
 set guifont='SourceCodePro-Regular-Powerline'
@@ -113,7 +136,7 @@ smap <C-a> <Plug>(neosnippet_expand_or_jump)
 imap <expr><TAB> neosnippet#jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 smap <expr><TAB> neosnippet#jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 set clipboard+=unnamed,autoselect
-au BufRead,BufNewFile *.ts setfiletype javascript.html.typescript
+au BufRead,BufNewFile *.ts,*.tsx setfiletype javascript.html.typescript
 
 "-------------------------------------------------------------------------
 "前に開いたときのカーソル位置
@@ -184,9 +207,7 @@ nnoremap tr gT
 nnoremap syn :SyntasticToggleMode
 
 "I love typescript
-"NeoBundle 'https://github.com/leafgarland/typescript-vim.git'
 ""-----------------------------------------------------------------------------------
-"NeoBundle 'Shougo/neocomplcache'
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplcache.
@@ -206,7 +227,6 @@ let g:neocomplcache_dictionary_filetype_lists = {
 inoremap <expr><CR>  pumvisible() ? neocomplcache#close_popup() : "<CR>"
 inoremap <expr><C-e>  neocomplcache#close_popup()
 "-----------------------------------------------------------------------------------
-"NeoBundle 'https://github.com/jason0x43/vim-js-indent.git'
 
 "リターンキーで挿入モードにならずに改行
 "noremap <CR> o<ESC>
