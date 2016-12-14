@@ -115,7 +115,8 @@ alias sniall="ls $HOME/.sheets";
 
 
 export ANDROID_HOME=/Users/fushiminaoto/android-sdk/eclipse/sdk
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export PATH=${PATH}$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$JAVA_HOME/bin
 
 # The next line updates PATH for the Google Cloud SDK.
 #source '/Users/fushiminaoto/00/instant/bq/google-cloud-sdk/path.zsh.inc'

@@ -1,0 +1,16 @@
+#perlのモジュール探し　　
+find `perl -e 'print "@INC"'` -name '****.pm' -print 
+
+#ディレクトリ以下置換
+perl -i -pe 's/aaaa/bbbb/g' **/*.txt
+
+#file探し
+#カレントディレクトリ以下にある*.v(verilogソースファイル)を検索
+$ find ./ -name "*.v" -ls
+
+#カレント以下スワップ削除
+find ./ -name "*.swp" -exec rm -rf {} \;
+
+
+#特定文字列を含まないファイル名を検索
+ggrep -r -L "const " htdocs_hotchkiss/js/

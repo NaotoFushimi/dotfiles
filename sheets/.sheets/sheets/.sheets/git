@@ -1,0 +1,14 @@
+git checkout
+
+git add 
+
+git commit
+
+git pull origin
+
+git push origin
+
+# git ls
+git ls-files -m | xargs git add
+git ls-files -d | xargs git rm
+git ls-files --others --exclude-standard | xargs rm
