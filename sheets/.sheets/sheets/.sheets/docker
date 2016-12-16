@@ -1,2 +1,0 @@
-#boot2docker virtualboxでスタート
-VBoxManage startvm --type headless boot2docker-vm

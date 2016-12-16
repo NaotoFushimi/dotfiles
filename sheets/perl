@@ -1,0 +1,5 @@
+
+#コマンドでlibを指定するようなとき
+perl -Ilib/../../../../wanon2/lib  bin/create_schema.pl
+  =>ちなみにこいつはlib/(プロジェクト)/DAO/DB/Schema.pm として使う
+
