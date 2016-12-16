@@ -1,0 +1,6 @@
+
+# apk インストール
+adb install -r app/app-demo.apk
+
+# インストールされてるパッケージ一覧
+adb shell pm list package

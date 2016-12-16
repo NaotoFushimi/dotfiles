@@ -1,2 +1,16 @@
+
+# [defulat]という名前のホストコンピュータ立ち上げ
+docker-machine start default
+
+# 停止中のコンテナを含む環境表示
+docker ps -a
+
+## 停止中のコンテナにさよなら
+docker ps -aq |  xargs docker rm
+
+# イメージ一覧 
+docker images
+
+#
 #boot2docker virtualboxでスタート
 VBoxManage startvm --type headless boot2docker-vm

@@ -51,7 +51,6 @@ alias gad="git add"
 alias gct="git commit"
 alias grn="grep -r -n "
 
-alias ssh="/bin/ssh-host-color"
 alias history_r="bindkey ^R history-incremental-search-backward"; 
 
 autoload -Uz VCS_INFO_get_data_git; VCS_INFO_get_data_git 2> /dev/null
