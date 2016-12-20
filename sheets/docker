@@ -2,15 +2,32 @@
 # [defulat]という名前のホストコンピュータ立ち上げ
 docker-machine start default
 
+# コンソールに環境適用
+eval "$(docker-machine env default)"
+
+
 # 停止中のコンテナを含む環境表示
 docker ps -a
 
 ## 停止中のコンテナにさよなら
 docker ps -aq |  xargs docker rm
 
+# none なイメージを殺す
+docker images | awk '/<none/{print $3}' | xargs docker rmi
+
+# とにかくイメージを殺す
+docker rmi $(docker images -q)
+
+
 # イメージ一覧 
 docker images
 
-#
-#boot2docker virtualboxでスタート
-VBoxManage startvm --type headless boot2docker-vm
+# image名をつけてbuild
+docker build -t REPOSITORY[:TAG] ./
+
+
+# bashでとりあえず入る
+docker run -t -i node /bin/bash
+
+# ECR的なののログイン権利 
+$(aws ecr get-login --region ap-northeast-1)

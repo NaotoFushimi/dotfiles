@@ -130,3 +130,5 @@ export PATH=$PATH:/Users/fushiminaoto/.nodebrew/current/bin
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+
+source /usr/local/bin/aws_zsh_completer.sh
